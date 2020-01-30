@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome/css/font-awesome.css">
+    <title>Add Edit</title>
+</head>
+
+<body class="bg-info">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" style="background-color: #fff; margin-top:25px; padding: 20px;">
+            <h3>{{view Title}}</h3>
+
+            <form action="/employee" method="POST" autocomplete="off">
+                <input type="hidden" name="_id" value="{{employee._id}}">
+                <div class="form-group">
+                    <label for="">Full Name</label>
+                    <input type="text" name="fullName" class="form-control" placeholder="Full Name"
+                        value="{{employee.fullName}}">
+                    <div class="text-danger">
+                        {{employee.fullNameError}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email" value="{{employee.email}}">
+                    <div class="text-danger">
+                        {{employee.emailError}}
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>School </label>
+                    <input type="text" name="school" class="form-control" placeholder="School"
+                        value="{{employee.school}}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Contact </label>
+                        <input type="text" name="contact" class="form-control" placeholder="Contact"
+                            value="{{employee.contact}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+                    <a href="/employee/list" class="btn btn-secondary"> <i class="fa fa-list-alt"></i>View All</a>
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>
